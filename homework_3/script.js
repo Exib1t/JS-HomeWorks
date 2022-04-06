@@ -51,7 +51,8 @@ function isOperatorValid(operation) {
   switch (operation) {
     case '+':
       return false;
-    case '-': 
+    case '-':
+      return false;
     case '*':
       return false;
     case '/':
