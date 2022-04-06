@@ -35,11 +35,11 @@ function calculate(firstOperand, secondOperand, action) {
     case '+':
       return +firstOperand + +secondOperand;
     case '-':
-      return firstOperand - secondOperand;
+      return +firstOperand - +secondOperand;
     case '*':
-      return firstOperand * secondOperand;
+      return +firstOperand * +secondOperand;
     case '/':
-      return firstOperand / secondOperand;
+      return +firstOperand / +secondOperand;
   }
 }
 
@@ -51,8 +51,7 @@ function isOperatorValid(operation) {
   switch (operation) {
     case '+':
       return false;
-    case '-':
-      return false;
+    case '-': 
     case '*':
       return false;
     case '/':
