@@ -26,11 +26,11 @@ function isOperandsValid(operandsValue) {
 }
 
 function calculate(operandsValue, operatorValue) {
-    const operandsList = operandsValue.split(',')
+    const operandsList = operandsValue.split(',') //------------------------------------------------------------
     switch (operatorValue) {
         case "+":
-            let res = 0
-            for(let i = 0; i<operandsList.length; i++) {
+            let res = Number(operandsList[0])
+            for(let i = 1; i<operandsList.length; i++) {
                 res += Number(operandsList[i])
             } return res;
         case "-" :
@@ -39,8 +39,8 @@ function calculate(operandsValue, operatorValue) {
                 sub -= Number(operandsList[i])
             } return sub;
         case '*' :
-            let mult = 1
-            for(let i = 0; i<operandsList.length; i++) {
+            let mult = Number(operandsList[0])
+            for(let i = 1; i<operandsList.length; i++) {
                 mult *= Number(operandsList[i])
             } return mult;
         case '/' :
@@ -52,7 +52,7 @@ function calculate(operandsValue, operatorValue) {
 }
 
 function showResult(operandsValue, operator, result) {
-    let operandsList = operandsValue.split(',')
-    let operandsString = operandsList.join(operator)
+    let operandsList = operandsValue.split(',') //---------------------------------------------------------------------------------
+    let operandsString = operandsList.join(` ${operator} `)
     alert(`${operandsString} = ${result}`)
 }
