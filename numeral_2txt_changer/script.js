@@ -9,7 +9,7 @@ function askString() {
 }
 
 function numeralsToText(string) {
-    const strList = string.split(' ');
+    const strList = string.split('');
     strList.filter((value, index) => {
         switch(value) {
             case "0" : strList.splice(index, 1, "zero"); break;
@@ -25,6 +25,6 @@ function numeralsToText(string) {
             default: break;
         }
     })
-    const filtered = strList.join(" ")
+    const filtered = strList.join("")
     return filtered;
 }
