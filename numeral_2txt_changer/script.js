@@ -1,5 +1,6 @@
 const str = askString()
 const fil = numeralsToText(str)
+alert(fil)
 
 //FUNCTIONS//
 
@@ -24,5 +25,6 @@ function numeralsToText(string) {
             default: break;
         }
     })
-    return strList;
+    const filtered = strList.join(" ")
+    return filtered;
 }
