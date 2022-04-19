@@ -1,0 +1,22 @@
+div {
+    position: absolute;
+    background-color: pink;
+    color: black;
+    width: 100px;
+    height: 100px;
+}
+
+#div-1 {
+    background: red;
+    top: 50px;
+}
+
+#div-2 {
+    background: rgb(157, 10, 255);
+    top: 100px;
+}
+
+#div-3 {
+    background: rgb(255, 145, 0);
+    top: 300px;
+}
