@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.video {
+  background: lightgray;
+  aspect-ratio: 16/9;
+  width: 300px;
+  border: 1px solid black;
+  display: grid;
+  margin: 10px;
+  grid-template-columns: 150px 150px;
+  justify-content: center;
+}
+
+.preview {
+  width: 96%;
+  margin: auto;
+  aspect-ratio: 16/9;
+  grid-column: 1/span 2;
+}
+
+.watches {
+  border-right: 1px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+.subscribers {
+  border-left: 1px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+#target {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px 300px;
+  grid-template-rows: 500px 500px 500px;
+  grid-gap: 10px;
+}

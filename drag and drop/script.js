@@ -1,8 +1,5 @@
-const mustache = require("mustache");
-
 const div = document.querySelector('div');
 let move = false;
-let move_can = false;
 let coordX;
 let coordY;
 

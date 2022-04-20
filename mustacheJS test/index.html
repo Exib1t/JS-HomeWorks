@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="mustache.min.js"></script>
+    <script src="script.js" async></script>
+    <title>MustacheJS test</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <template id="template">
+    <div class="video">
+      <img class="preview" src="{{source}}" alt="Preview">
+      <p class="watches">watches {{watches}}</p>
+      <p class="subscribers">subscribers {{subs}}</p>
+    </div>
+  </template>
+</body>
+</html>
