@@ -20,7 +20,7 @@ class Game{
   }
 
   get minesLoad() {
-    for (let i = 0; i <= this.rowsAmount; i++) {
+    for (let i = 1; i <= this.rowsAmount; i++) {
       if(Math.random() < 0.5) {
         board.insertAdjacentHTML('beforeend', this.createMine)
         board.insertAdjacentHTML('beforeend', this.createClear)
@@ -31,10 +31,19 @@ class Game{
     }
   }
 
-  get minesCoverSet() {
+  get minesNumbered() {
     let imagesArray = document.querySelectorAll('img')
+  }
+
+  get minesCoverSet() {
+    let imagesList = document.querySelectorAll('img')
+    let num = 0.5;
+    let imagesArray = Array.prototype.slice.call(imagesList).reverse()
     for(let img of imagesArray) {
       let imgSource = img.src;
+      img.setAttribute('number', Math.round(num))
+      img.setAttribute('isOpenned', false)
+      num += 0.5
       if (imgSource.includes('mine.png')) {
         img.setAttribute('type', 'mine')
         img.src = this.coverPath
@@ -47,6 +56,7 @@ class Game{
 
   get imageClick() {
     let typeValue;
+    let imagesArray = document.querySelectorAll('img')
     board.addEventListener('click', (event) => {
       if (event.target.getAttribute('type') === 'mine') {
         event.target.src = this.minePath;
@@ -54,15 +64,36 @@ class Game{
       } else if (event.target.getAttribute('type') === 'clear') {
         event.target.src = this.clearPath;
         typeValue = true;
+        let num = event.target.getAttribute('number')
+        event.target.removeAttribute('number')
+        for(let img of imagesArray) {
+          if (img.getAttribute('number') === num) {
+            img.src = this.minePath
+          }
+        }
       }
       if(typeValue === false) {
         if (confirm('You lose! Try again?')) {
           board.innerHTML = ''
-          this.minesLoad
-          this.minesCoverSet
+          this.load
+        } else {
+          this.minesCoverOff
         }
       }
     })
+  }
+
+  get minesCoverOff() {
+    let imagesArray = document.querySelectorAll('img')
+    for(let img of imagesArray) {
+      if (img.getAttribute('type') === 'mine') {
+        img.src = this.minePath
+      } else if (img.getAttribute('type') === 'clear') {
+        img.src = this.clearPath
+      } else {
+        alert('Error')
+      }
+    }
   }
 
   get load() {
