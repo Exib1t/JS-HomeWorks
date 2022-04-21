@@ -1,5 +1,4 @@
 const board = document.querySelector('#board')
-
 class Game{
   constructor(minePath, rowsAmount, clearPath, coverPath) {
     this.minePath = minePath;
@@ -47,22 +46,31 @@ class Game{
   }
 
   get imageClick() {
-    board.addEventListener('click', imageFlip)
-    const minePath = this.minePath
-    let clearPath = this.clearPath
-
-    function imageFlip(event) {
-      let target = event.target;
-      if (target.getAttribute('type') === 'mine') {
-        target.src = minePath
-      } else if (target.getAttribute('type') === 'clear') {
-        target.src = clearPath
+    let typeValue;
+    board.addEventListener('click', (event) => {
+      if (event.target.getAttribute('type') === 'mine') {
+        event.target.src = this.minePath;
+        typeValue = false;
+      } else if (event.target.getAttribute('type') === 'clear') {
+        event.target.src = this.clearPath;
+        typeValue = true;
       }
-    }
+      if(typeValue === false) {
+        if (confirm('You lose! Try again?')) {
+          board.innerHTML = ''
+          this.minesLoad
+          this.minesCoverSet
+        }
+      }
+    })
+  }
+
+  get load() {
+    this.minesLoad
+    this.minesCoverSet
+    this.imageClick
   }
 }
 
 let gameLoaded = new Game('images/mine.png', 5, 'images/right.jpg', 'images/cover.jpg')
-gameLoaded.minesLoad
-gameLoaded.minesCoverSet
-gameLoaded.imageClick
+gameLoaded.load
