@@ -56,8 +56,8 @@ class Game{
 
   get imageClick() {
     let typeValue;
-    let imagesArray = document.querySelectorAll('img')
     board.addEventListener('click', (event) => {
+      let imagesArray = document.querySelectorAll('img')
       if (event.target.getAttribute('type') === 'mine') {
         event.target.src = this.minePath;
         typeValue = false;
@@ -75,7 +75,8 @@ class Game{
       if(typeValue === false) {
         if (confirm('You lose! Try again?')) {
           board.innerHTML = ''
-          this.load
+          this.minesLoad
+          this.minesCoverSet
         } else {
           this.minesCoverOff
         }
