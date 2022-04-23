@@ -19,6 +19,26 @@ img {
 
 #board p {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 35%;
+  left: 41%;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#restartGameButton {
+  width: 205px;
+  height: 50px;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
 }

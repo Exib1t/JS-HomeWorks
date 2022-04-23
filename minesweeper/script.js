@@ -1,11 +1,12 @@
 class GameLogic {
 
-  constructor(minePath, clearPath, coverPath, rowsAmount, element) {
+  constructor(minePath, clearPath, coverPath, rowsAmount, element, button) {
     this.minePath = minePath;
     this.clearPath = clearPath;
     this.coverPath = coverPath;
     this.rowsAmount = rowsAmount;
     this.board = document.querySelector(element)
+    this.resButton = document.querySelector(button)
   }
 
   createMine() {
@@ -26,7 +27,7 @@ class GameLogic {
 
   randomizeBoard() {
     this.board.innerHTML = ''
-    this.board.style.filter = 'blur(0px)'
+    this.resButton.setAttribute('disabled', 'disabled')
 
     for (let i = 0; i < this.rowsAmount; i++) {
       if (Math.random() < 0.5) {
@@ -47,6 +48,8 @@ class GameLogic {
 
       img.setAttribute('number', Math.round(num))
       num += 0.5
+
+      img.style.filter = 'blur(0px)'
 
       img.src = this.coverPath
     }
@@ -70,6 +73,7 @@ class GameLogic {
       event.target.src = this.minePath
       this.openAll()
       this.showLose()
+      this.resButton.removeAttribute('disabled')
     } else if (event.target.getAttribute('type') === 'clear') {
       event.target.src = this.clearPath
       this.openPair(event)
@@ -135,8 +139,21 @@ class GameLogic {
     this.board.insertAdjacentHTML('beforeend', this.createLoseText())
   }
 
+  clickOnrestartButton() {
+    this.resButton.addEventListener('click', () => {
+      this.randomizeBoard()
+      this.clickOnCell()
+    })
+  }
+
+  newGame() {
+    this.randomizeBoard()
+    this.clickOnCell()
+    this.clickOnrestartButton()
+  }
+
 }
 
-const minesweeper = new GameLogic('images/mine.png', 'images/clear.jpg', 'images/cover.jpg', 5, '#board')
-minesweeper.randomizeBoard()
-minesweeper.clickOnCell()
+const minesweeper = new GameLogic('images/mine.png', 'images/clear.jpg', 'images/cover.jpg', 5, '#board', '#restartGameButton')
+minesweeper.newGame()
+
