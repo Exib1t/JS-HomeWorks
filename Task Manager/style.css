@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(22, 46, 75);
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(221, 221, 221);
+  min-width: 60%;
+}
+
+#title {
+  font-size: 40px;
+  font-weight: 700;
+  align-self:center;
+  margin: 50px;
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+#inputText {
+  width: 65%;
+  height: 4vh;
+  font-size: 20px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: 0px;
+  background-color: #222;
+  color: rgb(221, 221, 221);
+}
+
+#addButton {
+  width: 30%;
+  height: 4vh;
+  border-radius: 10px;
+  background-color: #222;
+  color: rgb(221, 221, 221);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  transition: all .3s ease-in-out;
+}
+
+#addButton:hover {  
+  box-shadow: inset 0px 0px 20px 2px rgb(61, 61, 61);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+#addButtonClicked {
+  width: 30%;
+  height: 4vh;
+  border-radius: 10px;
+  background-color: #222;
+  color: rgb(221, 221, 221);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  transition: all .3s ease-in-out;
+}
+
+.task{
+  display: flex;
+  background-color: #222;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  align-self: center;
+}
+
+.taskText {
+  font-size: 26px;
+}
+
+.checked {
+  background-color: rgb(29, 146, 0);
+  transition: all .3s ease-in-out;
+}
+
+.taskDeleteImg {
+  width: 30px;
+  aspect-ratio: 1/1;
+  margin-left: auto;
+  filter: invert(70%);
+  transition: all .3s ease-in-out;
+}
+
+.taskDeleteImg:hover {
+  transform: scale(120%);
+  filter: invert();
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}

@@ -25,6 +25,10 @@ class GameLogic {
     return '<p>You Lose! Try Again?</p>'
   }
 
+  createWinText() {
+    return '<p>You win! You can try again!'
+  }
+
   randomizeBoard() {
     this.board.innerHTML = ''
     this.resButton.setAttribute('disabled', 'disabled')
@@ -127,10 +131,15 @@ class GameLogic {
       }
     }
 
+    // while(!document.readyState === 'loading'){
+    //   break;
+    // }
+
     for (let img of imagesArray) {
       let number = img.getAttribute('number')
       if (Number(number) === minNum) {
-        img.setAttribute('isClickable', true)
+        img.setAttribute('isClickable', true);
+        img.style.border = '2px dashed red';
       }
     }
   }
@@ -139,10 +148,15 @@ class GameLogic {
     this.board.insertAdjacentHTML('beforeend', this.createLoseText())
   }
 
+  showWin() {
+    this.board.insertAdjacentHTML('beforeend', this.createWinText())
+  }
+
   clickOnrestartButton() {
     this.resButton.addEventListener('click', () => {
       this.randomizeBoard()
       this.clickOnCell()
+      this.clickableRow()
     })
   }
 
@@ -150,8 +164,8 @@ class GameLogic {
     this.randomizeBoard()
     this.clickOnCell()
     this.clickOnrestartButton()
+    this.clickableRow()
   }
-
 }
 
 const minesweeper = new GameLogic('images/mine.png', 'images/clear.jpg', 'images/cover.jpg', 5, '#board', '#restartGameButton')
