@@ -38,7 +38,6 @@ window.onload = function() {
 function addTask() {
   addButton.id = 'addButtonClicked'
   setTimeout(setAddButtonId, 300)
-  console.log('123')
   const taskText = document.querySelector('#inputText').value;
   document.querySelector('#inputText').value = ''
   if (taskText === '') {

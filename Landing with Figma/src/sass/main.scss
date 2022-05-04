@@ -1,0 +1,90 @@
+$bgColor: #fff;
+$fzHeader: 14px;
+$navff: 'Manrope', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 83.4%;
+  background-color: $bgColor;
+}
+
+.l-siteHeader {
+  height: 890px;
+  width: 100%;
+}
+
+.l-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 43px;
+}
+
+.b-siteLogo {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.b-navigationButton {
+  font-size: $fzHeader;
+  font-family: $navff;
+  margin-right: 25px;
+}
+
+.l-navigationLogin {
+  .b-navigationLoginButton {
+    width: 137px;
+    height: 52px;
+  }
+
+  .b-SignInButton {
+    margin-right: 50px;
+  }
+
+  .b-StartFreeButtonText {
+    font-size: $fzHeader;
+    font-family: $navff;
+  }
+
+  .b-StartFreeButton {
+    background-color: #4F46BA;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: rgba($color: #000, $alpha: .2);
+      border-radius: 10px;
+    }
+    &:hover {
+      &::before {
+        width: 100%;
+        transition: all .4s ease;
+      }
+    }
+  }
+}

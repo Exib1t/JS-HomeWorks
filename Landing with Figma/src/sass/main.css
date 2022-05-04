@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  width: 83.4%;
+  background-color: #fff;
+}
+
+.l-siteHeader {
+  height: 890px;
+  width: 100%;
+}
+
+.l-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 43px;
+}
+
+.b-siteLogo {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.b-navigationButton {
+  font-size: 14px;
+  font-family: "Manrope", sans-serif;
+  margin-right: 25px;
+}
+
+.l-navigationLogin .b-navigationLoginButton {
+  width: 137px;
+  height: 52px;
+}
+
+.l-navigationLogin .b-SignInButton {
+  margin-right: 50px;
+}
+
+.l-navigationLogin .b-StartFreeButtonText {
+  font-size: 14px;
+  font-family: "Manrope", sans-serif;
+}
+
+.l-navigationLogin .b-StartFreeButton {
+  background-color: #4F46BA;
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  position: relative;
+}
+
+.l-navigationLogin .b-StartFreeButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.l-navigationLogin .b-StartFreeButton:hover::before {
+  width: 100%;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+/*# sourceMappingURL=main.css.map */
