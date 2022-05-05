@@ -17,10 +17,12 @@ body {
 .container {
   width: 83.4%;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .l-siteHeader {
-  height: 890px;
+  height: 100px;
   width: 100%;
 }
 
@@ -90,5 +92,21 @@ body {
   width: 100%;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
+}
+
+.l-main {
+  width: 100%;
+  max-width: 1440px;
+  background: #888;
+  color:#fff;
+  height: 100vh;
+}
+
+footer {
+  width: 100%;
+  max-width: 1440px;
+  background: #000;
+  color: #fff;
+  height: 20vh;
 }
 /*# sourceMappingURL=main.css.map */
